@@ -61,10 +61,6 @@ Android
 
 ![ScreenShot](https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-android-share.png)
 
-Windows Phone 8
-
-![ScreenShot](https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-wp8-share.jpg)
-
 #### Alternative ShareSheet (iOS only, using the [Cordova ActionSheet plugin](https://github.com/EddyVerbruggen/cordova-plugin-actionsheet))
 
 ![ScreenShot](https://raw.githubusercontent.com/EddyVerbruggen/cordova-plugin-actionsheet/master/screenshots/ios/ios-share.png)
@@ -125,8 +121,6 @@ For iOS, you'll need to add the `Social.framework` and `MessageUI.framework` to 
 iOS: Copy `SocialSharing.h` and `SocialSharing.m` to `platforms/ios/<ProjectName>/Plugins`
 
 Android: Copy `SocialSharing.java` to `platforms/android/src/nl/xservices/plugins` (create the folders)
-
-Window Phone: Copy `SocialSharing.cs` to `platforms/wp8/Plugins/nl.x-services.plugins.socialsharing` (create the folders)
 
 ### PhoneGap Build
 Just add the following xml to your `config.xml` to always use the latest version of this plugin (which is published to plugins.cordova.io these days):
@@ -438,30 +432,8 @@ navigator.share({
 
 It doesn't provide all the options that the other share methods do but it is spec compliant.
 
-## 6. Usage on Windows Phone
-The available methods on WP8 are: `available`, `canShareViaEmail`, `share`, `shareViaEmail` and `shareViaSMS`.
-Currently the first two always return true, but this may change in the future in case I can find a way to truly detect the availability.
 
-The `share` function on WP8 supports two flavours: message only, or a combination of message, title and link.
-
-Beware: for now please pass null values for all non used attributes, like in the examples below.
-
-Sharing a message:
-```html
-<button onclick="window.plugins.socialsharing.share('Message only', null, null, null)">message only</button>
-```
-
-Sharing a link:
-```html
-<button onclick="window.plugins.socialsharing.share('Optional message', 'Optional title', null, 'http://www.x-services.nl')">message, title, link</button>
-```
-
-Sharing an image (only images from the internet are supported). If you pass more than one image as an array, only the first one is used:
-```html
-<button onclick="window.plugins.socialsharing.share('Optional message', 'Optional title', 'https://www.google.nl/images/srpr/logo4w.png', null)">image only</button>
-```
-
-## 7. Share-popover on iPad
+## 6. Share-popover on iPad
 
 > This no longer works since plugin version 5.5.0, see [this issue](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/issues/1052).
 
@@ -502,7 +474,7 @@ window.plugins.socialsharing.setIPadPopupCoordinates(targetBounds);
 window.plugins.socialsharing.share('Hello from iOS :)')
 ```
 
-## 8. Whitelisting on iOS
+## 7. Whitelisting on iOS
 
 Since iOS 9 you have to make sure to whitelist the applications you want to use for sharing. Without whitelisting "query schemes", you may get the error callback invoked when calling the `canShareVia` function (and possibly the `shareVia`). You can verify this is a permissions issue by observing the output in Xcode for something like:
 
@@ -545,7 +517,7 @@ To address query schema issue, after installaing the plugin you can edit the iOS
 
 The advantage with this method is that editing is done in the config.xml file which will most often be in your source control anyway and hence, changes to it will be reserved.
 
-## 9. NSPhotoLibraryUsageDescription on iOS
+## 8. NSPhotoLibraryUsageDescription on iOS
 
 This plugin requires permissions to the users photos. Since iOS 10 it is required that you provide a description for this access.
 
@@ -555,7 +527,7 @@ The plugin configures a default description for you. If you do need to customise
 $ cordova plugin add cordova-plugin-x-socialsharing --variable PHOTO_LIBRARY_USAGE_DESCRIPTION="This app uses your photo library" --variable PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION="This app saves images your photo library"
 ```
 
-## 10. Import Types into an Ionic Angular Project
+## 9. Import Types into an Ionic Angular Project
 
 If you do not already have a typings file definition, create one inside your `src` folder, for example`src/typings.d.ts`
 
