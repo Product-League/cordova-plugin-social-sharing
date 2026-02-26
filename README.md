@@ -24,11 +24,10 @@ Every now and then kind folks ask me how they can give me all their money. So if
 3. [Installation](#3-installation)
 4. [Usage on iOS and Android](#4-usage-on-ios-and-android)
 5. [Web Share API](#5-web-share-api)
-6. [Usage on Windows Phone](#6-usage-on-windows-phone)
-7. [Share-popover on iPad](#7-share-popover-on-ipad)
-8. [Whitelisting on iOS](#8-whitelisting-on-ios)
-9. [NSPhotoLibraryUsageDescription on iOS](#9-nsphotolibraryusagedescription-on-ios)
-10. [Import Types into an Ionic Angular Project](#10-import-types-into-an-ionic-angular-project)
+6. [Share-popover on iPad](#7-share-popover-on-ipad)
+7. [Whitelisting on iOS](#8-whitelisting-on-ios)
+8. [NSPhotoLibraryUsageDescription on iOS](#9-nsphotolibraryusagedescription-on-ios)
+9. [Import Types into an Ionic Angular Project](#10-import-types-into-an-ionic-angular-project)
 
 ## 1. Description
 
